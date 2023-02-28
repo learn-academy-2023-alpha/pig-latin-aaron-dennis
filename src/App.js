@@ -70,6 +70,7 @@ const App = () => {
               .concat("ay")
           );
         //  our word has three parts:
+        // access the location of the first vowel by checking the 0th index of the vowelsArray
         // the beginning is a substring of the word starting right after the first vowel
         // concat the .split.slice(from the beginning of the word to right after the first vowel)
         // concat "ay"
