@@ -33,6 +33,54 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
+      // eachWord is an array of strings, we need to access each string by it's index and perform the pig latin logic
+      // need a conditional to determine what type of word it is (start with vowel, start with consonants, etc)
+      // then in each conditional we need to perform the correct logic
+      // turn string into an array, split the string at the right spot, then push the chunk to the end
+
+      // Function to determine the type of word it is
+
+      // starts with vowel take the string, concat "way" to the end
+       if (vowelsArray.includes(eachWord[0])) {
+        return eachWord.concat("way");
+       } else if (vowelsArray[0] === "u" && eachWord.includes("q")){
+           return eachWord.replace("qu", "").concat("quay");
+        } else if (eachWord.includes("y"), vowelsArray.includes(eachWord[0])){
+            return eachWord.replace("y", "").concat("yay");
+         } else if (eachWord.includes("y") !== vowelsArray)
+            //  return eachWord.push("y").concat("ay");
+    
+  
+
+    
+        // else if (eachword.includes("y"))
+        // return eachWord
+        // first vowel is qu
+        // go to the next vowel
+        // only vowel is y
+        // treat y as a vowel
+        // starts with consonant
+        // to take a word
+        // get the first half of the word before the vowel
+        // get the second half of the word INCLUDING the vowel
+        // put those things together
+        // add "way" to the end
+
+        // VOWEL
+        // take the string, concat "ay" to the end
+        // concat "way"
+
+        // QU
+        // if the first vowel is a u, check it there is a q in front of it, if so, than treat as a consonant, if not, treat as normal
+
+        // Y
+        // Y is only a vowel if it's the only vowel in the word.
+        // first check if there are any vowels in the word. If there are none, treat y as a vowel. Do vowel things with it
+
+        // Consonants
+        // take the word, split it into an array, slice() the array at the first vowel. concat the first half of the word to the end, then add ay
+
+        // ACTION ITEM: this return will be the output of your Pig Latin'd code
     
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
