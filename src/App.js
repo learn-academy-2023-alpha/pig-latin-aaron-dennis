@@ -50,8 +50,6 @@ const App = () => {
         eachWord[eachWord.indexOf("u") - 1] === "q"
       ) {
         // take the word, split it  into an array. then we want to slice from the beginning to the first instance of 'u' this will return an array, which we can turn back into a string. and concat it onto the end of the SUBSTRING +ay
-        // SQU EAL
-        // (substring of eachword starting at right past u) concat slice.join. of the beginning of the word, up to U
         return eachWord.substring(eachWord.indexOf("u") + 1).concat(
           eachWord
             .split("")
@@ -59,10 +57,20 @@ const App = () => {
             .join("")
             .concat("ay")
         );
-        // squeal s  ay
-        // 0S 1Q 2U 3E 4A 5L
-      } else if ((eachWord.includes("y"), vowelsArray.includes(eachWord[0]))) {
-        return eachWord.replace("y", "").concat("yay");
+        // if a word includes y but no other vowels, replace the y with nothing and concat yay to the end of the word
+        // if word includes y && vowelsArray is empty
+      } else if (eachWord.includes("y") && vowelsArray.length === 0) {
+        return eachWord
+          .substring(eachWord.indexOf("y"))
+          .concat(
+            eachWord
+              .split("")
+              .slice(0, eachWord.indexOf("y"))
+              .join("")
+              .concat("ay")
+          );
+
+        // return eachWord.replace("y", "").concat("yay");
       } else if (eachWord.includes("y") !== vowelsArray)
         //  return eachWord.push("y").concat("ay");
 
