@@ -50,8 +50,6 @@ const App = () => {
         eachWord[eachWord.indexOf("u") - 1] === "q"
       ) {
         // take the word, split it  into an array. then we want to slice from the beginning to the first instance of 'u' this will return an array, which we can turn back into a string. and concat it onto the end of the SUBSTRING +ay
-        // SQU EAL
-        // (substring of eachword starting at right past u) concat slice.join. of the beginning of the word, up to U
         return eachWord.substring(eachWord.indexOf("u") + 1).concat(
           eachWord
             .split("")
@@ -59,44 +57,65 @@ const App = () => {
             .join("")
             .concat("ay")
         );
-        // squeal s  ay
-        // 0S 1Q 2U 3E 4A 5L
-      } else if ((eachWord.includes("y"), vowelsArray.includes(eachWord[0]))) {
-        return eachWord.replace("y", "").concat("yay");
-      } else if (eachWord.includes("y") !== vowelsArray)
-        //  return eachWord.push("y").concat("ay");
+        // if a word includes y but no other vowels, replace the y with nothing and concat yay to the end of the word
+        // if word includes y && vowelsArray is empty
+      } else if (eachWord.includes("y") && vowelsArray.length === 0) {
+        return eachWord
+          .substring(eachWord.indexOf("y"))
+          .concat(
+            eachWord
+              .split("")
+              .slice(0, eachWord.indexOf("y"))
+              .join("")
+              .concat("ay")
+          );
+        //  our word has three parts:
+        // the beginning is a substring of the word starting right after the first vowel
+        // concat the .split.slice(from the beginning of the word to right after the first vowel)
+        // concat "ay"
+      } else {
+        return eachWord
+          .substring(eachWord.indexOf(vowelsArray[0]))
+          .concat(
+            eachWord
+              .split("")
+              .slice(0, eachWord.indexOf(vowelsArray[0]))
+              .join("")
+              .concat("ay")
+          );
+      }
 
-        // else if (eachword.includes("y"))
-        // return eachWord
-        // first vowel is qu
-        // go to the next vowel
-        // only vowel is y
-        // treat y as a vowel
-        // starts with consonant
-        // to take a word
-        // get the first half of the word before the vowel
-        // get the second half of the word INCLUDING the vowel
-        // put those things together
-        // add "way" to the end
+      // else if (eachword.includes("y"))
+      // return eachWord
+      // first vowel is qu
+      // go to the next vowel
+      // only vowel is y
+      // treat y as a vowel
+      // starts with consonant
+      // to take a word
+      // get the first half of the word before the vowel
+      // get the second half of the word INCLUDING the vowel
+      // put those things together
+      // add "way" to the end
 
-        // VOWEL
-        // take the string, concat "ay" to the end
-        // concat "way"
+      // VOWEL
+      // take the string, concat "ay" to the end
+      // concat "way"
 
-        // QU
-        // if the first vowel is a u, check it there is a q in front of it, if so, than treat as a consonant, if not, treat as normal
+      // QU
+      // if the first vowel is a u, check it there is a q in front of it, if so, than treat as a consonant, if not, treat as normal
 
-        // Y
-        // Y is only a vowel if it's the only vowel in the word.
-        // first check if there are any vowels in the word. If there are none, treat y as a vowel. Do vowel things with it
+      // Y
+      // Y is only a vowel if it's the only vowel in the word.
+      // first check if there are any vowels in the word. If there are none, treat y as a vowel. Do vowel things with it
 
-        // Consonants
-        // take the word, split it into an array, slice() the array at the first vowel. concat the first half of the word to the end, then add ay
+      // Consonants
+      // take the word, split it into an array, slice() the array at the first vowel. concat the first half of the word to the end, then add ay
 
-        // ACTION ITEM: this return will be the output of your Pig Latin'd code
+      // ACTION ITEM: this return will be the output of your Pig Latin'd code
 
-        // ACTION ITEM: this return will be the output of your Pig Latin'd code
-        return eachWord;
+      // ACTION ITEM: this return will be the output of your Pig Latin'd code
+      return eachWord;
     });
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
