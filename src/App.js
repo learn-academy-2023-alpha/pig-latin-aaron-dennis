@@ -5,7 +5,7 @@ import butcherPigImage from "./assets/butcherPig.jpeg";
 const App = () => {
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
   const [userInput, setUserInput] = useState(
-    "apple through queen squeal fry fluent"
+    "Enter your text to be translated here"
   );
   const [inputTranslated, setInputTranslated] = useState("");
 
@@ -41,7 +41,9 @@ const App = () => {
       // Function to determine the type of word it is
 
       // starts with vowel take the string, concat "way" to the end
-      if (vowelsArray.includes(eachWord[0])) {
+      if (eachWord === "") {
+        return "";
+      } else if (vowelsArray.includes(eachWord[0])) {
         return eachWord.concat("way");
         // if the first vowel is a u, and it does have a q in front of it
         // pull the index of the "u" in each word, and check if the index right before it is a 'q'
@@ -129,7 +131,7 @@ const App = () => {
 
   // ACTION ITEM: this method restarts the game by setting the original state, when you are ready for your full user experience delete the test words in setUserInput and pass an empty string
   const restartGame = () => {
-    setUserInput("apple through queen squeal fry fluent");
+    setUserInput("");
     setInputTranslated("");
   };
 
